@@ -3,10 +3,9 @@ services:
     name: stirling-pdf
     runtime: image
     image:
-      url: docker.io/stirlingtools/stirling-pdf:latest
+      url: docker.io/stirlingtools/stirling-pdf:latest-ultra-lite
     region: singapore
     plan: free
-    healthCheckPath: /api/v1/info/status
     envVars:
       - key: SECURITY_ENABLELOGIN
         value: "true"
