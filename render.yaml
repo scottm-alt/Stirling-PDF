@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: stirling-pdf
+    runtime: image
+    image:
+      url: docker.io/stirlingtools/stirling-pdf:latest
+    region: singapore
+    plan: free
+    healthCheckPath: /api/v1/info/status
+    envVars:
+      - key: SECURITY_ENABLELOGIN
+        value: "true"
+      - key: SECURITY_INITIAL_LOGIN_USERNAME
+        value: scott
+      - key: SECURITY_INITIAL_LOGIN_PASSWORD
+        sync: false
+      - key: SYSTEM_GOOGLEVISIBILITY
+        value: "false"
+      - key: LANGS
+        value: en_GB
+      - key: SYSTEM_DEFAULTLOCALE
+        value: en-GB
+      - key: SYSTEM_MAXFILESIZE
+        value: "100"
